@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sneha ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    text-align:center;
+    background:
+      radial-gradient(ellipse at top, rgba(255,105,180,0.25), transparent 50%),
+      radial-gradient(ellipse at bottom, rgba(138,43,226,0.15), transparent 50%),
+      linear-gradient(135deg,#1a0010,#0a0015,#1a0028);
+    color:#fff;
+    overflow-x:hidden;
+    min-height:100vh;
+    position:relative;
+}
+
+/* Animated gradient background overlay */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(255,20,147,0.15), transparent 40%),
+      radial-gradient(circle at 80% 50%, rgba(138,43,226,0.15), transparent 40%);
+    animation:bgPulse 8s ease-in-out infinite;
+    pointer-events:none;
+    z-index:0;
+}
+
+@keyframes bgPulse{
+    0%,100%{opacity:0.5;}
+    50%{opacity:0.8;}
+}
+
+/* Background hearts */
+.heart{
+    position:fixed;
+    z-index:1;
+    color:#ffb6cc;
+    opacity:0.3;
+    pointer-events:none;
+    animation:float 11s linear infinite;
+    filter:drop-shadow(0 0 8px rgba(255,105,180,0.6));
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(120vh) scale(.9) rotate(0deg);
+        opacity:0.3;
+    }
+    50%{
+        opacity:0.5;
+    }
+    100%{
+        transform:translateY(-30vh) scale(1.4) rotate(15deg);
+        opacity:0;
+    }
+}
+
+/* Sparkle effect */
+.sparkle{
+    position:fixed;
+    width:4px;
+    height:4px;
+    background:#fff;
+    border-radius:50%;
+    z-index:1;
+    pointer-events:none;
+    animation:sparkle 2s ease-out infinite;
+}
+
+@keyframes sparkle{
+    0%{
+        transform:scale(0) rotate(0deg);
+        opacity:1;
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        transform:scale(2) rotate(180deg);
+        opacity:0;
+    }
+}
+
+.container{
+    margin-top:12vh;
+    padding:30px 20px;
+    position:relative;
+    z-index:2;
+    animation:fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hidden{
+    display:none !important;
+}
+
+h1,h2{
+    font-family:'Playfair Display',serif;
+    font-weight:800;
+    text-shadow:0 0 30px rgba(255,105,180,0.6),
+                0 0 60px rgba(255,20,147,0.4);
+    animation:glow 3s ease-in-out infinite;
+}
+
+@keyframes glow{
+    0%,100%{
+        text-shadow:0 0 20px rgba(255,105,180,0.6),
+                    0 0 40px rgba(255,20,147,0.4);
+    }
+    50%{
+        text-shadow:0 0 30px rgba(255,105,180,0.8),
+                    0 0 60px rgba(255,20,147,0.6),
+                    0 0 90px rgba(255,105,180,0.4);
+    }
+}
+
+h1{
+    font-size:clamp(28px,7vw,52px);
+    margin-bottom:20px;
+    line-height:1.3;
+}
+
+h2{
+    font-size:clamp(24px,6vw,38px);
+}
+
+/* Lock screen styling */
+#lockScreen input{
+    padding:14px 20px;
+    font-size:18px;
+    border:2px solid rgba(255,105,180,0.5);
+    border-radius:30px;
+    background:rgba(255,255,255,0.1);
+    color:#fff;
+    outline:none;
+    backdrop-filter:blur(10px);
+    transition:all 0.3s ease;
+    max-width:280px;
+    width:90%;
+}
+
+#lockScreen input:focus{
+    border-color:#ff69b4;
+    box-shadow:0 0 25px rgba(255,105,180,0.6);
+    background:rgba(255,255,255,0.15);
+}
+
+#lockScreen p{
+    font-size:clamp(16px,4vw,19px);
+    margin:15px 0;
+}
+
+/* Buttons */
+button{
+    padding:16px 38px;
+    font-size:19px;
+    font-weight:700;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    transition:all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position:relative;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    letter-spacing:0.5px;
+}
+
+button::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:0;
+    height:0;
+    border-radius:50%;
+    background:rgba(255,255,255,0.3);
+    transform:translate(-50%,-50%);
+    transition:width 0.6s,height 0.6s;
+}
+
+button:hover::before{
+    width:300px;
+    height:300px;
+}
+
+button:active{
+    transform:scale(0.95);
+}
+
+#lockScreen button{
+    background:linear-gradient(135deg,#ff69b4,#ff1493);
+    color:#fff;
+    box-shadow:0 8px 25px rgba(255,20,147,0.6);
+    margin-top:10px;
+}
+
+#lockScreen button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 35px rgba(255,20,147,0.8);
+}
+
+#yesBtn{
+    background:linear-gradient(135deg,#ff69b4,#ff1493,#ff69b4);
+    background-size:200% 200%;
+    color:#fff;
+    box-shadow:0 10px 40px rgba(255,20,147,0.7),
+               inset 0 1px 0 rgba(255,255,255,0.3);
+    max-width:90vw;
+    animation:gradientShift 3s ease infinite;
+    border:2px solid rgba(255,255,255,0.3);
+}
+
+@keyframes gradientShift{
+    0%,100%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+}
+
+#yesBtn:hover{
+    transform:scale(1.08) translateY(-2px);
+    box-shadow:0 15px 50px rgba(255,20,147,0.9),
+               0 0 60px rgba(255,105,180,0.6);
+}
+
+#noBtn{
+    background:linear-gradient(135deg,#3b0f22,#2a0a18);
+    color:#fff;
+    position:absolute;
+    max-width:60vw;
+    box-shadow:0 6px 20px rgba(0,0,0,0.6);
+    border:1px solid rgba(255,105,180,0.3);
+}
+
+#noBtn:hover{
+    background:linear-gradient(135deg,#4a1428,#3a0f20);
+    transform:scale(1.05);
+}
+
+.buttons{
+    position:relative;
+    margin-top:50px;
+    height:180px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Excited page */
+.excited{
+    animation:bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes bounceIn{
+    0%{
+        transform:scale(0.3);
+        opacity:0;
+    }
+    50%{
+        transform:scale(1.05);
+    }
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.excited h1{
+    font-size:clamp(28px,7vw,48px);
+    margin-bottom:40px;
+    animation:pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+}
+
+.big-yes{
+    font-size:clamp(22px,6vw,32px);
+    padding:24px 65px;
+    border-radius:60px;
+    background:linear-gradient(135deg,#ff1493,#ff69b4,#ffd1dc,#ff69b4,#ff1493);
+    background-size:300% 300%;
+    color:#fff;
+    box-shadow:0 15px 50px rgba(255,20,147,1),
+               0 0 80px rgba(255,105,180,0.8);
+    max-width:95vw;
+    animation:bigGradient 4s ease infinite;
+    border:3px solid rgba(255,255,255,0.4);
+    text-shadow:2px 2px 4px rgba(0,0,0,0.3);
+}
+
+@keyframes bigGradient{
+    0%,100%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+}
+
+.big-yes:hover{
+    transform:scale(1.12) rotate(-2deg);
+    box-shadow:0 20px 60px rgba(255,20,147,1),
+               0 0 100px rgba(255,105,180,1);
+}
+
+/* Final page */
+#finalPage{
+    animation:fadeIn 1.2s ease-out;
+}
+
+.final-photo{
+    position:relative;
+    display:inline-block;
+    animation:photoReveal 1s ease-out;
+}
+
+@keyframes photoReveal{
+    from{
+        transform:scale(0.8) rotateY(90deg);
+        opacity:0;
+    }
+    to{
+        transform:scale(1) rotateY(0deg);
+        opacity:1;
+    }
+}
+
+.final-photo::before{
+    content:"";
+    position:absolute;
+    top:-10px;
+    left:-10px;
+    right:-10px;
+    bottom:-10px;
+    background:linear-gradient(45deg,#ff69b4,#ff1493,#da70d6,#ff69b4);
+    background-size:300% 300%;
+    border-radius:28px;
+    z-index:-1;
+    animation:borderGlow 3s ease infinite;
+    filter:blur(12px);
+}
+
+@keyframes borderGlow{
+    0%,100%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+}
+
+.final-photo img{
+    max-width:260px;
+    width:90vw;
+    margin:20px auto 30px;
+    border-radius:24px;
+    box-shadow:0 15px 50px rgba(255,20,147,0.8);
+    border:4px solid rgba(255,255,255,0.3);
+    display:block;
+}
+
+.love-letter{
+    margin:0 auto;
+    padding:20px 25px 30px;
+    line-height:1.9;
+    font-size:clamp(16px,4.5vw,18px);
+    max-width:600px;
+    white-space:pre-wrap;
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,105,180,0.3);
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Mobile specific */
+@media (max-width: 600px){
+    .container{
+        margin-top:8vh;
+        padding:20px 16px;
+    }
+
+    h1{
+        font-size:clamp(24px,7vw,32px);
+    }
+
+    .buttons{
+        height:200px;
+    }
+
+    button{
+        font-size:17px;
+        padding:14px 28px;
+    }
+
+    .final-photo img{
+        max-width:240px;
+    }
+}
+
+/* Error message styling */
+#error{
+    color:#ff6b9d;
+    font-weight:600;
+    text-shadow:0 0 10px rgba(255,107,157,0.6);
+}
+</style>
+</head>
+
+<body>
+
+<iframe id="musicQ" style="display:none;" allow="autoplay"></iframe>
+<iframe id="musicEnd" style="display:none;" allow="autoplay"></iframe>
+
+<div id="lockScreen" class="container">
+    <h2>This page is only for Sneha ❤️</h2>
+    <p>Enter the secret password:</p>
+    <input type="password" id="password">
+    <br><br>
+    <button onclick="unlock()">Enter</button>
+    <p id="error" style="color:#ffb3c6;"></p>
+</div>
+
+<div class="container hidden" id="main">
+    <h1 id="question">Sneha 💖<br>Will you be my Valentine?</h1>
+    <div class="buttons">
+        <button id="yesBtn">YES ❤️</button>
+        <button id="noBtn">NO 💔</button>
+    </div>
+</div>
+
+<div class="container hidden excited" id="excitedPage">
+    <h1>YESSS YOU ARE MINEEEE 😍🔥💖🥳💞</h1>
+    <button id="finalYesBtn" class="big-yes">FOREVER & ALWAYS ❤️</button>
+</div>
+
+<div class="container hidden" id="finalPage">
+    <h1>You Said YES 😭❤️</h1>
+    <div class="final-photo">
+        <img src="https://drive.google.com/uc?export=view&id=10QbuMMq7ZGa330M9uLlIL69vkIc14Zt2">
+    </div>
+    <div class="love-letter" id="typewriter"></div>
+</div>
+
+<script>
+let yesScale=1,noScale=1,noClicks=0;
+
+function unlock(){
+    if(password.value==="sneha123"){
+        lockScreen.classList.add("hidden");
+        main.classList.remove("hidden");
+        musicQ.src="https://www.youtube.com/embed/_NmE3pyluO8?autoplay=1&loop=1&playlist=_NmE3pyluO8";
+        hearts();
+        sparkles();
+        placeNoSafe();
+    }else error.innerText="Wrong password ❤️";
+}
+
+function hearts(){
+    setInterval(()=>{
+        let h=document.createElement("div");
+        h.className="heart";
+        h.innerText="❤️";
+        h.style.left=Math.random()*100+"vw";
+        h.style.fontSize=(Math.random()*14+12)+"px";
+        document.body.appendChild(h);
+        setTimeout(()=>h.remove(),11000);
+    },700);
+}
+
+function sparkles(){
+    setInterval(()=>{
+        let s=document.createElement("div");
+        s.className="sparkle";
+        s.style.left=Math.random()*100+"vw";
+        s.style.top=Math.random()*100+"vh";
+        document.body.appendChild(s);
+        setTimeout(()=>s.remove(),2000);
+    },300);
+}
+
+function placeNoSafe(){
+    const area=document.querySelector(".buttons");
+    const rect=area.getBoundingClientRect();
+    const side=Math.random()<0.5?"left":"right";
+    noBtn.style.left=(side==="left"?10:rect.width-90)+"px";
+    noBtn.style.top=Math.random()*(rect.height-60)+"px";
+}
+
+let msgs=[
+"Are you sure? 😏","Think again, love! 💕","Don't break my heart! 🥺",
+"I saw that coming! 😉","One more chance? 🙏","You can't escape! 😈",
+"Pretty please? 🌹","I love you too much! ❤️","Say yes already! 🎉",
+"Final warning! ⚠️","You're mine forever! 😘","YES is waiting! ✨"
+];
+let i=0;
+
+noBtn.onclick=()=>{
+    if(i<msgs.length){
+        question.innerText=msgs[i++];
+        noClicks++;
+        yesScale+=0.1;
+        yesBtn.style.transform=`scale(${yesScale})`;
+        noScale=Math.max(noScale-0.05,0.65);
+        noBtn.style.transform=`scale(${noScale})`;
+        if(noClicks===3){
+            yesBtn.style.background="linear-gradient(135deg,#ff4d6d,#ff8fab)";
+        }
+        placeNoSafe();
+    }else noBtn.style.display="none";
+};
+
+yesBtn.onclick=()=>{
+    main.classList.add("hidden");
+    excitedPage.classList.remove("hidden");
+};
+
+finalYesBtn.onclick=()=>{
+    excitedPage.classList.add("hidden");
+    finalPage.classList.remove("hidden");
+    musicQ.src="";
+    musicEnd.src="https://www.youtube.com/embed/znIedzgpF1U?autoplay=1&loop=1&playlist=znIedzgpF1U";
+    typeWriter();
+};
+
+let text=`Sneha,
+
+Loving you is not a choice—it is something my heart does naturally.
+
+You are the calm in my chaos,
+the light in my darkness,
+and the reason I smile without realizing it.
+
+I don’t promise a perfect life,
+but I promise to stand beside you
+in every imperfect moment.
+
+I promise to choose you,
+again and again—
+even on the hardest days.
+
+You are not just my Valentine.
+You are my forever.
+
+Yours always,
+Saurav ❤️`;
+
+function typeWriter(){
+    let j=0;
+    typewriter.innerHTML="";
+    let t=setInterval(()=>{
+        typewriter.innerHTML+=text[j]==="\n"?"<br>":text[j];
+        j++;
+        if(j>=text.length)clearInterval(t);
+    },36);
+}
+</script>
+
+</body>
+</html>
